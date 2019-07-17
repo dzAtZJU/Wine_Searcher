@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		381A73ED6C5A9992C36853FF /* libPods-Wine_Searcher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3DE05E0EEDDD87E4512C15E /* libPods-Wine_Searcher.a */; };
-		890C3FE422D38840000799A0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C3FE322D38840000799A0 /* main.swift */; };
-		890C3FEB22DE23E8000799A0 /* WIneSheetReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C3FEA22DE23E8000799A0 /* WIneSheetReader.swift */; };
-		890C3FED22DE3010000799A0 /* WineSheetParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C3FEC22DE3010000799A0 /* WineSheetParser.swift */; };
-		890C3FEF22DE34B2000799A0 /* configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C3FEE22DE34B2000799A0 /* configurations.swift */; };
+		890C3FE422D38840000799A0 /* _main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C3FE322D38840000799A0 /* _main.swift */; };
+		890C3FEB22DE23E8000799A0 /* RowsReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C3FEA22DE23E8000799A0 /* RowsReader.swift */; };
+		890C3FED22DE3010000799A0 /* RowParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C3FEC22DE3010000799A0 /* RowParser.swift */; };
+		890C3FEF22DE34B2000799A0 /* MerchantSpecificWorkFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C3FEE22DE34B2000799A0 /* MerchantSpecificWorkFlow.swift */; };
 		890C3FF122DEA353000799A0 /* WineSearchProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C3FF022DEA353000799A0 /* WineSearchProcedure.swift */; };
+		89E258C822DEC7EE00FE227E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E258C722DEC7EE00FE227E /* main.swift */; };
+		89E258CA22DEDDA200FE227E /* RowsWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E258C922DEDDA200FE227E /* RowsWriter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,11 +32,13 @@
 /* Begin PBXFileReference section */
 		1E3ACD78E0A4FD9C488FD8FB /* Pods-Wine_Searcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wine_Searcher.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wine_Searcher/Pods-Wine_Searcher.release.xcconfig"; sourceTree = "<group>"; };
 		890C3FE022D38840000799A0 /* Wine_Searcher */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Wine_Searcher; sourceTree = BUILT_PRODUCTS_DIR; };
-		890C3FE322D38840000799A0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		890C3FEA22DE23E8000799A0 /* WIneSheetReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIneSheetReader.swift; sourceTree = "<group>"; };
-		890C3FEC22DE3010000799A0 /* WineSheetParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineSheetParser.swift; sourceTree = "<group>"; };
-		890C3FEE22DE34B2000799A0 /* configurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = configurations.swift; sourceTree = "<group>"; };
+		890C3FE322D38840000799A0 /* _main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _main.swift; sourceTree = "<group>"; };
+		890C3FEA22DE23E8000799A0 /* RowsReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowsReader.swift; sourceTree = "<group>"; };
+		890C3FEC22DE3010000799A0 /* RowParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowParser.swift; sourceTree = "<group>"; };
+		890C3FEE22DE34B2000799A0 /* MerchantSpecificWorkFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantSpecificWorkFlow.swift; sourceTree = "<group>"; };
 		890C3FF022DEA353000799A0 /* WineSearchProcedure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineSearchProcedure.swift; sourceTree = "<group>"; };
+		89E258C722DEC7EE00FE227E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		89E258C922DEDDA200FE227E /* RowsWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowsWriter.swift; sourceTree = "<group>"; };
 		8F310346EF3DB499F2AF5166 /* Pods-Wine_Searcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wine_Searcher.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wine_Searcher/Pods-Wine_Searcher.debug.xcconfig"; sourceTree = "<group>"; };
 		B3DE05E0EEDDD87E4512C15E /* libPods-Wine_Searcher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Wine_Searcher.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -81,11 +85,13 @@
 		890C3FE222D38840000799A0 /* Wine_Searcher */ = {
 			isa = PBXGroup;
 			children = (
-				890C3FE322D38840000799A0 /* main.swift */,
-				890C3FEA22DE23E8000799A0 /* WIneSheetReader.swift */,
-				890C3FEC22DE3010000799A0 /* WineSheetParser.swift */,
-				890C3FEE22DE34B2000799A0 /* configurations.swift */,
+				890C3FE322D38840000799A0 /* _main.swift */,
+				890C3FEA22DE23E8000799A0 /* RowsReader.swift */,
+				890C3FEC22DE3010000799A0 /* RowParser.swift */,
+				890C3FEE22DE34B2000799A0 /* MerchantSpecificWorkFlow.swift */,
 				890C3FF022DEA353000799A0 /* WineSearchProcedure.swift */,
+				89E258C722DEC7EE00FE227E /* main.swift */,
+				89E258C922DEDDA200FE227E /* RowsWriter.swift */,
 			);
 			path = Wine_Searcher;
 			sourceTree = "<group>";
@@ -177,11 +183,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				890C3FE422D38840000799A0 /* main.swift in Sources */,
+				890C3FE422D38840000799A0 /* _main.swift in Sources */,
 				890C3FF122DEA353000799A0 /* WineSearchProcedure.swift in Sources */,
-				890C3FED22DE3010000799A0 /* WineSheetParser.swift in Sources */,
-				890C3FEF22DE34B2000799A0 /* configurations.swift in Sources */,
-				890C3FEB22DE23E8000799A0 /* WIneSheetReader.swift in Sources */,
+				89E258CA22DEDDA200FE227E /* RowsWriter.swift in Sources */,
+				89E258C822DEC7EE00FE227E /* main.swift in Sources */,
+				890C3FED22DE3010000799A0 /* RowParser.swift in Sources */,
+				890C3FEF22DE34B2000799A0 /* MerchantSpecificWorkFlow.swift in Sources */,
+				890C3FEB22DE23E8000799A0 /* RowsReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

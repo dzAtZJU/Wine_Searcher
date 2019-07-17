@@ -8,8 +8,18 @@
 
 import Foundation
 
-func searchProcedure3(_ wine: Wine) {
-    searchWine(wine, location: URLPattern.locationGlobal, forAveragePrice: true) { (offer, error, _, _) in
-        <#code#>
+protocol SearchProcedure {
+    func execute(_ wine: Wine, resultHost: WangYiLing, params: [String:Any]?)
+}
+
+struct SearchProcedure3: SearchProcedure {
+    
+    static let shared = SearchProcedure3()
+    
+    func execute(_ wine: Wine, resultHost: WangYiLing, params: [String:Any]? = nil) {
+        synchronizer.enter()
+        searchWine(wine, location: URLPattern.locationGlobal, forAveragePrice: true) { (wineOffer, error, location, _) in
+            appendResult(wine: wine, offer: wineOffer, location: location, error: error, resultHost: resultHost)
+        }
     }
 }

@@ -9,7 +9,7 @@
 import Foundation
 import CSV
 
-protocol RowChateauItemParser {
+protocol RowWineNameParser {
     func parse(from: CSVReader) -> String
 }
 
@@ -17,21 +17,21 @@ protocol RowVintageParser {
     func parse(from: CSVReader) -> [String]
 }
 
-struct ChateauItemParser1: RowChateauItemParser {
+struct WineNameParser1: RowWineNameParser {
     let chateauHeader: String
     
     let itemHeader: String
     
     func parse(from: CSVReader) -> String {
-        return csvReader[chateauHeader]! + " " + csvReader[itemHeader]!
+        return from[chateauHeader]! + " " + from[itemHeader]!
     }
 }
 
-struct ChateauItemParser2: RowChateauItemParser {
+struct WineNameParser2: RowWineNameParser {
     let header: String
     
     func parse(from: CSVReader) -> String {
-        return csvReader[header]!
+        return from[header]!
     }
 }
 
@@ -39,7 +39,7 @@ struct VintageParser1: RowVintageParser {
     let header: String
     
     func parse(from: CSVReader) -> [String] {
-        return [csvReader[header]!]
+        return [from[header]!]
     }
 }
 
@@ -47,7 +47,13 @@ struct VintageParser2: RowVintageParser {
     let header: String
     
     func parse(from: CSVReader) -> [String] {
-        let abbrVintages = csvReader[header]!.split(separator: "/")
+        let field = from[header]!
+        
+        if field == "NV" {
+            return [""]
+        }
+        
+        let abbrVintages = field.split(separator: "/")
         var vintages = [String]()
         for abbrVintage in abbrVintages {
             let number = Int(abbrVintage)!

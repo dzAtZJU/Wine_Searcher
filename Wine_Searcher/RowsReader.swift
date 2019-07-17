@@ -9,9 +9,9 @@
 import Foundation
 import CSV
 
-class WineCSVReader {
+class RowsReader {
     
-    init(csvReader: CSVReader, chateauItemParser: RowChateauItemParser, vintageParser: RowVintageParser) {
+    init(csvReader: CSVReader, chateauItemParser: RowWineNameParser, vintageParser: RowVintageParser) {
         self.csvReader = csvReader
         self.chateauItemParser = chateauItemParser
         self.vintageParser = vintageParser
@@ -19,7 +19,7 @@ class WineCSVReader {
     
     let csvReader: CSVReader
     
-    let chateauItemParser: RowChateauItemParser
+    let chateauItemParser: RowWineNameParser
     
     let vintageParser: RowVintageParser
     
