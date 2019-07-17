@@ -1,0 +1,6 @@
+module Pods_Wine_Searcher {
+  umbrella header "Pods-Wine_Searcher-umbrella.h"
+
+  export *
+  module * { export * }
+}

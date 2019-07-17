@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		381A73ED6C5A9992C36853FF /* libPods-Wine_Searcher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3DE05E0EEDDD87E4512C15E /* libPods-Wine_Searcher.a */; };
 		890C3FE422D38840000799A0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C3FE322D38840000799A0 /* main.swift */; };
+		890C3FEB22DE23E8000799A0 /* WIneSheetReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C3FEA22DE23E8000799A0 /* WIneSheetReader.swift */; };
+		890C3FED22DE3010000799A0 /* WineSheetParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C3FEC22DE3010000799A0 /* WineSheetParser.swift */; };
+		890C3FEF22DE34B2000799A0 /* configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C3FEE22DE34B2000799A0 /* configurations.swift */; };
+		890C3FF122DEA353000799A0 /* WineSearchProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C3FF022DEA353000799A0 /* WineSearchProcedure.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +28,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1E3ACD78E0A4FD9C488FD8FB /* Pods-Wine_Searcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wine_Searcher.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wine_Searcher/Pods-Wine_Searcher.release.xcconfig"; sourceTree = "<group>"; };
 		890C3FE022D38840000799A0 /* Wine_Searcher */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Wine_Searcher; sourceTree = BUILT_PRODUCTS_DIR; };
 		890C3FE322D38840000799A0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		890C3FEA22DE23E8000799A0 /* WIneSheetReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIneSheetReader.swift; sourceTree = "<group>"; };
+		890C3FEC22DE3010000799A0 /* WineSheetParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineSheetParser.swift; sourceTree = "<group>"; };
+		890C3FEE22DE34B2000799A0 /* configurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = configurations.swift; sourceTree = "<group>"; };
+		890C3FF022DEA353000799A0 /* WineSearchProcedure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineSearchProcedure.swift; sourceTree = "<group>"; };
+		8F310346EF3DB499F2AF5166 /* Pods-Wine_Searcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wine_Searcher.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wine_Searcher/Pods-Wine_Searcher.debug.xcconfig"; sourceTree = "<group>"; };
+		B3DE05E0EEDDD87E4512C15E /* libPods-Wine_Searcher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Wine_Searcher.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,17 +44,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				381A73ED6C5A9992C36853FF /* libPods-Wine_Searcher.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		51C917D7B437E91CDF409B1F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8F310346EF3DB499F2AF5166 /* Pods-Wine_Searcher.debug.xcconfig */,
+				1E3ACD78E0A4FD9C488FD8FB /* Pods-Wine_Searcher.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		890C3FD722D38840000799A0 = {
 			isa = PBXGroup;
 			children = (
 				890C3FE222D38840000799A0 /* Wine_Searcher */,
 				890C3FE122D38840000799A0 /* Products */,
+				51C917D7B437E91CDF409B1F /* Pods */,
+				DD8C5C70614AA7C81636F5A0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,8 +82,20 @@
 			isa = PBXGroup;
 			children = (
 				890C3FE322D38840000799A0 /* main.swift */,
+				890C3FEA22DE23E8000799A0 /* WIneSheetReader.swift */,
+				890C3FEC22DE3010000799A0 /* WineSheetParser.swift */,
+				890C3FEE22DE34B2000799A0 /* configurations.swift */,
+				890C3FF022DEA353000799A0 /* WineSearchProcedure.swift */,
 			);
 			path = Wine_Searcher;
+			sourceTree = "<group>";
+		};
+		DD8C5C70614AA7C81636F5A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B3DE05E0EEDDD87E4512C15E /* libPods-Wine_Searcher.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -69,6 +105,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 890C3FE722D38840000799A0 /* Build configuration list for PBXNativeTarget "Wine_Searcher" */;
 			buildPhases = (
+				F9A00A14414CFB294AB94AE5 /* [CP] Check Pods Manifest.lock */,
 				890C3FDC22D38840000799A0 /* Sources */,
 				890C3FDD22D38840000799A0 /* Frameworks */,
 				890C3FDE22D38840000799A0 /* CopyFiles */,
@@ -114,12 +151,37 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F9A00A14414CFB294AB94AE5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Wine_Searcher-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		890C3FDC22D38840000799A0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				890C3FE422D38840000799A0 /* main.swift in Sources */,
+				890C3FF122DEA353000799A0 /* WineSearchProcedure.swift in Sources */,
+				890C3FED22DE3010000799A0 /* WineSheetParser.swift in Sources */,
+				890C3FEF22DE34B2000799A0 /* configurations.swift in Sources */,
+				890C3FEB22DE23E8000799A0 /* WIneSheetReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +305,7 @@
 		};
 		890C3FE822D38840000799A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F310346EF3DB499F2AF5166 /* Pods-Wine_Searcher.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HTG5RPJ6QF;
@@ -253,6 +316,7 @@
 		};
 		890C3FE922D38840000799A0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E3ACD78E0A4FD9C488FD8FB /* Pods-Wine_Searcher.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HTG5RPJ6QF;
