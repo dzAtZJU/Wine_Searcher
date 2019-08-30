@@ -11,7 +11,7 @@ import CSV
 
 class RowsReader {
     
-    init(csvReader: CSVReader, chateauItemParser: RowWineNameParser, vintageParser: RowVintageParser) {
+    init(csvReader: CSVReader, chateauItemParser: RowWineNameParser, vintageParser: RowVintageParser?) {
         self.csvReader = csvReader
         self.chateauItemParser = chateauItemParser
         self.vintageParser = vintageParser
@@ -21,7 +21,7 @@ class RowsReader {
     
     let chateauItemParser: RowWineNameParser
     
-    let vintageParser: RowVintageParser
+    let vintageParser: RowVintageParser?
     
     private var wineArray: [Wine]?
     
@@ -34,7 +34,7 @@ class RowsReader {
         wineArray = [Wine]()
         while csvReader.next() != nil {
             let chateauItem = chateauItemParser.parse(from: csvReader)
-            let vintages = vintageParser.parse(from: csvReader)
+            let vintages = vintageParser?.parse(from: csvReader) ?? [""]
             for vintage in vintages {
                 wineArray!.append(Wine(name: chateauItem, vintage: vintage, ordinal: ordinal))
                 ordinal += 1

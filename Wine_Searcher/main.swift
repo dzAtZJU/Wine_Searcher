@@ -9,10 +9,6 @@
 import Foundation
 import CSV
 
-let synchronizer = DispatchGroup()
-
-let serialQueue = DispatchQueue(label: "aggregate batch results")
-
 class WangYiLing {
     
     let sheetFile: String
@@ -61,16 +57,21 @@ class WangYiLing {
         FileManager.default.createFile(atPath: outputFilePath, contents: nil, attributes: nil)
         let outputStream = OutputStream(toFileAtPath: outputFilePath, append: false)!
         let csvWriter = try! CSVWriter(stream: outputStream)
-        
+        searchReuslts.sort { (a, b) -> Bool in
+            return a.wine.ordinal < b.wine.ordinal
+        }
         merchantSpecificWorkFlow.rowsWriter.write(searchReuslts, csvWriter: csvWriter)
     }
 }
 
-
-let sheetFile = "/Users/zhouweiran/Desktop/haopu.csv"//CommandLine.arguments[1]
-let chateauName = "haopu"//CommandLine.arguments[2]
-let outputFilePath = "/Users/zhouweiran/Desktop/haopu_result.csv"//CommandLine.arguments[3]
-let cookie = "cookie_enabled=true; _ga=GA1.2.1855909706.1562562891; _gat_UA-216914-1=1; _gid=GA1.2.1293813888.1563330847; _px3=9f1578e9265b0436629c09f89cde2ad186ea1ee0b05b8821b469bdad9cde1e96:4HWo853HwIcpVhVwI2jSEsdoy3wB+/Y5+5Po9wiwSaKleV4qtiHWOjWSrL/sSQYxwJfcswuwEjy6Zzb5P6hl3w==:1000:xdwbPCFWnMbCC0KDCoR3yQUpkhpMImbWpJhPA5X6XkQhpeOMtL8ZtrpceTbSl8Thhq6hwgPTgKI5CBE0B/EzBoIEOa75Ju5ZvBKSG3aeGZxEMDlBrkBLupwJi1IPNBRWVSS7m0F5YIkZEnIDZPNiMZk6xjvvy6CAFZMCPPfXEv4=; _pxde=c37c4e67e2ff464a812f4f1469b0f49f92a0d9b47c5a241eff85183521f2c72d:eyJ0aW1lc3RhbXAiOjE1NjMzNDU4MzE1NzcsImlwY19pZCI6W119; fflag=flag_store_manager%3A0%2Cend; cookie_enabled=true; _pxhd=abe8a15a688d16eeaedd4497d65c3fba5136796a7f9035afb5965e6af725160a:39fc8c41-a30f-11e9-bbb0-b59bf048f68a; search=start%7Cmorgenster%2Blourens%2Briver%2Bvalley%7C2005%7C%7CCNY%7C%7C%7C%7C%7C%7C%7C%7C%7Ce%7Cend; __gads=ID=da16b9c3405ca065:T=1562562890:RT=1563330848:S=ALNI_MbwgUsBoOrncw7kfQRJu5XoxTNpXw; ID=3Z7JCD1BDGL001F; IDPWD=I74884208; x=1; _csrf=k9yGTOjZO6vWzdSK0pgDZPzSWq2-UIcN; cto_lwid=363e93ca-d43a-4709-95ad-de4ea52562b5; OX_plg=swf|shk|pm; _pxvid=4efeee1b-a13f-11e9-81e1-0242ac12000a; geoinfo=30.6667|104.0667|Chengdu|China|CN|47.244.156.35|1815286|IP|Chengdu%2C+China; visit=JN53CR1CDZQ0011|20190708061446|ws-api.lml|https%3A%2F%2Fwww.google.com%2F|end; COOKIE_ID=JN53CR1CDZQ0011"// //CommandLine.arguments[4]
+// CSV 格式的预处理之后的酒单
+let sheetFile = "/Users/zhouweiran/Desktop/Offer 28-08-2019 LBV 3/Offer-Table 1.csv"//CommandLine.arguments[1]
+// 使用的 Workflow (表单分析方法和酒价查询方法), see code in MerchantSpecificWorkFlow.swift
+let chateauName = "query_3_markets"//CommandLine.arguments[2]
+// 查询结果文件的位置
+let outputFilePath = "/Users/zhouweiran/Desktop/xindewenjian.csv"//CommandLine.arguments[3]
+// wine-searcher 网站的 cookie
+let cookie = "cookie_enabled=true; visit=6MS3CK30D7300D5%7C20190707125544%7C%2Ffind%2Fde%2Bbeaucastel%2Bcoudoulet%2Bcote%2Bdu%2Brhone%2Bfrance%2F2016%2Fchina%7C%7Cend+; _csrf=gQrVm6ph9t0IygvBxi-KOnV2PT1dAYcC; _pxvid=2bac3565-a0ae-11e9-87de-0242ac12000d; COOKIE_ID=6MS3CK30D7300D5; geoinfo=31.0449|121.4012|Shanghai|China|CN|218.79.175.211|1796236|IP|Shanghai%2C+China; __gads=ID=58e32773d20e508f:T=1562500559:S=ALNI_Maf2rg0XF_zjmBbxap_iWKE60g96Q; OX_plg=pm; cookie_enabled=true; ID=CTVMC5XRDSM003Q; IDPWD=I42099223; _gid=GA1.2.1815533492.1567094195; _pxhd=e7bdf73be7ff433ab42ada4ae5fe7062911b0a03be11395a120c0bc5d093d0c1:f2e93a30-ca7b-11e9-bd30-e3e2be03704d; __pxvid=01874b92-ca7c-11e9-a7ce-0242ac110003; search=start%7Cchassagne-montrachet%2Bchateau%2Bde%2Bla%2Bmaltroye%7C1%7Cany%7CCNY%7C%7C%7C%7C%7C%7C%7C%7C%7Ce%7Cend; _pxff_tm=1; _gat_UA-216914-1=1; _ga=GA1.1.1432282382.1562500558; _ga_M0W3BEYMXL=GS1.1.1567124746.2.1.1567126287.0; _px3=47d524b56abda2a53170c03794c56edf1b877b04284551ccc91d987ceae8c517:AEE4sy8NohBfID/4Lc0HhFD6blmo29FNGPhRe7F3inD3G+QJDRb3c2fEh66X6/FcUo2o6DphEjAshBUbxLlgXA==:1000:LoYEamIJrpf498bh6Cxg7AQ0QJyeXWvDNz4Simq8qDM0OZczy64ywcukwdAkBJ5JPPMnzaSrO24Z0oI8DeKuMeexHLq33swRW4PQzO3VwRB/g1dobLrZ+1eS5x3Lab/0AenamCaV0G+Qlba4nae71x0RKjY8GoEKmcHxY0QhO58=; _pxde=6cad7fe76e4ff541ead1506b9c00b704360a7ed2042a847ca3942b8cd0b5ad16:eyJ0aW1lc3RhbXAiOjE1NjcxMjYyODg5MzUsImZfa2IiOjAsImlwY19pZCI6W119; fflag=FLAG_AA_BUCKET_CKY:0,FLAG_STORE_MANAGER:0,FLAG_FIND_EXP_BIG_LABEL:1,end"// //CommandLine.arguments[4]
 
 let wangYiLin = WangYiLing(sheetFile: sheetFile, chateauName: chateauName, outputFilePath: outputFilePath)
 wangYiLin.work()

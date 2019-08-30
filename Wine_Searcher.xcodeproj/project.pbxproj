@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		381A73ED6C5A9992C36853FF /* libPods-Wine_Searcher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3DE05E0EEDDD87E4512C15E /* libPods-Wine_Searcher.a */; };
-		890C3FE422D38840000799A0 /* _main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C3FE322D38840000799A0 /* _main.swift */; };
+		890C3FE422D38840000799A0 /* WineSearcherWebsite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C3FE322D38840000799A0 /* WineSearcherWebsite.swift */; };
 		890C3FEB22DE23E8000799A0 /* RowsReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C3FEA22DE23E8000799A0 /* RowsReader.swift */; };
-		890C3FED22DE3010000799A0 /* RowParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C3FEC22DE3010000799A0 /* RowParser.swift */; };
+		890C3FED22DE3010000799A0 /* FieldParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C3FEC22DE3010000799A0 /* FieldParser.swift */; };
 		890C3FEF22DE34B2000799A0 /* MerchantSpecificWorkFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C3FEE22DE34B2000799A0 /* MerchantSpecificWorkFlow.swift */; };
 		890C3FF122DEA353000799A0 /* WineSearchProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C3FF022DEA353000799A0 /* WineSearchProcedure.swift */; };
+		890C524B2318A7D8002715E2 /* snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C524A2318A7D8002715E2 /* snippet.swift */; };
 		89E258C822DEC7EE00FE227E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E258C722DEC7EE00FE227E /* main.swift */; };
 		89E258CA22DEDDA200FE227E /* RowsWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E258C922DEDDA200FE227E /* RowsWriter.swift */; };
 /* End PBXBuildFile section */
@@ -32,11 +33,12 @@
 /* Begin PBXFileReference section */
 		1E3ACD78E0A4FD9C488FD8FB /* Pods-Wine_Searcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wine_Searcher.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wine_Searcher/Pods-Wine_Searcher.release.xcconfig"; sourceTree = "<group>"; };
 		890C3FE022D38840000799A0 /* Wine_Searcher */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Wine_Searcher; sourceTree = BUILT_PRODUCTS_DIR; };
-		890C3FE322D38840000799A0 /* _main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _main.swift; sourceTree = "<group>"; };
+		890C3FE322D38840000799A0 /* WineSearcherWebsite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineSearcherWebsite.swift; sourceTree = "<group>"; };
 		890C3FEA22DE23E8000799A0 /* RowsReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowsReader.swift; sourceTree = "<group>"; };
-		890C3FEC22DE3010000799A0 /* RowParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowParser.swift; sourceTree = "<group>"; };
+		890C3FEC22DE3010000799A0 /* FieldParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldParser.swift; sourceTree = "<group>"; };
 		890C3FEE22DE34B2000799A0 /* MerchantSpecificWorkFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantSpecificWorkFlow.swift; sourceTree = "<group>"; };
 		890C3FF022DEA353000799A0 /* WineSearchProcedure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineSearchProcedure.swift; sourceTree = "<group>"; };
+		890C524A2318A7D8002715E2 /* snippet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = snippet.swift; sourceTree = "<group>"; };
 		89E258C722DEC7EE00FE227E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		89E258C922DEDDA200FE227E /* RowsWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowsWriter.swift; sourceTree = "<group>"; };
 		8F310346EF3DB499F2AF5166 /* Pods-Wine_Searcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wine_Searcher.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wine_Searcher/Pods-Wine_Searcher.debug.xcconfig"; sourceTree = "<group>"; };
@@ -85,15 +87,48 @@
 		890C3FE222D38840000799A0 /* Wine_Searcher */ = {
 			isa = PBXGroup;
 			children = (
-				890C3FE322D38840000799A0 /* _main.swift */,
-				890C3FEA22DE23E8000799A0 /* RowsReader.swift */,
-				890C3FEC22DE3010000799A0 /* RowParser.swift */,
-				890C3FEE22DE34B2000799A0 /* MerchantSpecificWorkFlow.swift */,
-				890C3FF022DEA353000799A0 /* WineSearchProcedure.swift */,
+				890C524F2318A8A3002715E2 /* Configure_Different_Workflows */,
+				890C524E2318A87A002715E2 /* How_To_Search */,
+				890C524D2318A84A002715E2 /* How_To_Parse_CSV */,
+				890C524C2318A82A002715E2 /* core */,
 				89E258C722DEC7EE00FE227E /* main.swift */,
-				89E258C922DEDDA200FE227E /* RowsWriter.swift */,
 			);
 			path = Wine_Searcher;
+			sourceTree = "<group>";
+		};
+		890C524C2318A82A002715E2 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				890C524A2318A7D8002715E2 /* snippet.swift */,
+				89E258C922DEDDA200FE227E /* RowsWriter.swift */,
+				890C3FEA22DE23E8000799A0 /* RowsReader.swift */,
+				890C3FE322D38840000799A0 /* WineSearcherWebsite.swift */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		890C524D2318A84A002715E2 /* How_To_Parse_CSV */ = {
+			isa = PBXGroup;
+			children = (
+				890C3FEC22DE3010000799A0 /* FieldParser.swift */,
+			);
+			path = How_To_Parse_CSV;
+			sourceTree = "<group>";
+		};
+		890C524E2318A87A002715E2 /* How_To_Search */ = {
+			isa = PBXGroup;
+			children = (
+				890C3FF022DEA353000799A0 /* WineSearchProcedure.swift */,
+			);
+			path = How_To_Search;
+			sourceTree = "<group>";
+		};
+		890C524F2318A8A3002715E2 /* Configure_Different_Workflows */ = {
+			isa = PBXGroup;
+			children = (
+				890C3FEE22DE34B2000799A0 /* MerchantSpecificWorkFlow.swift */,
+			);
+			path = Configure_Different_Workflows;
 			sourceTree = "<group>";
 		};
 		DD8C5C70614AA7C81636F5A0 /* Frameworks */ = {
@@ -183,11 +218,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				890C3FE422D38840000799A0 /* _main.swift in Sources */,
+				890C3FE422D38840000799A0 /* WineSearcherWebsite.swift in Sources */,
 				890C3FF122DEA353000799A0 /* WineSearchProcedure.swift in Sources */,
 				89E258CA22DEDDA200FE227E /* RowsWriter.swift in Sources */,
+				890C524B2318A7D8002715E2 /* snippet.swift in Sources */,
 				89E258C822DEC7EE00FE227E /* main.swift in Sources */,
-				890C3FED22DE3010000799A0 /* RowParser.swift in Sources */,
+				890C3FED22DE3010000799A0 /* FieldParser.swift in Sources */,
 				890C3FEF22DE34B2000799A0 /* MerchantSpecificWorkFlow.swift in Sources */,
 				890C3FEB22DE23E8000799A0 /* RowsReader.swift in Sources */,
 			);
